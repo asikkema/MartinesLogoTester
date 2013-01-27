@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Martine's Logopedie test helper</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/angular.js"></script>
+<script src="js/scoreTable.js"></script>
+<script src="js/martine.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+</head>
+
+<body>
+
+<div class="container" ng-controller="MartineCtrl">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit">
+        <h2>Martine</h2>
+
+        <form class="form-horizontal" ng-submit="calcAge()">
+            <div class="control-group">
+                <label class="control-label" for="birthday">Geb. datum</label>
+
+                <div class="controls">
+                    <input type="date" ng-model="birthday" id="birthday" class="input-medium">
+                    <input class="btn-primary" type="submit" value="Bereken leeftijd">
+                    <input type="text" disabled="true" ng-model="ageDisplay" id="age">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="span9">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Subtesten</th>
+                    <th>Ruwe score</th>
+                    <th>Norm score</th>
+                    <th>Percentiel</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Begrippen en Aanwijzingen volgen (BAV)</td>
+                    <td><input type="number" ng-model="bavScore" ng-change="bavScoreChange()" class="input-small"></td>
+                    <td><input type="number" ng-model="bavNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="bavPercentiel" disabled="true" class="input-small"></td>
+                </tr>
+                <tr>
+                    <td>Woord structuur (WS)</td>
+                    <td><input type="number" ng-model="wsScore" ng-change="wsScoreChange()" class="input-small"></td>
+                    <td><input type="number" ng-model="wsNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="wsPercentiel" disabled="true" class="input-small"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Martine 2013</p>
+    </footer>
+
+</div>
+</body>
+</html>
