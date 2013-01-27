@@ -25,7 +25,7 @@ function MartineCtrl($scope) {
         $scope.zhPercentiel = '';
         $scope.wsNorm = '';
         $scope.wsPercentiel = '';
-        $scope.bavNorm = r.normScore;
+        $scope.bavNorm = '';
         $scope.bavPercentiel = '';
     };
 
@@ -87,6 +87,6 @@ function MartineCtrl($scope) {
     };
 
     $scope.updateTotals = function() {
-
+        $scope.normTotal = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
     }
 }
