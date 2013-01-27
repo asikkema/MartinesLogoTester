@@ -30,11 +30,11 @@
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
-        <h2>Martine</h2>
+        <h2>Martine's Test calculator</h2>
 
         <form class="form-horizontal" ng-submit="calcAge()">
             <div class="control-group">
-                <label class="control-label" for="birthday">Geb. datum</label>
+                <label class="control-label" for="birthday">Geboorte datum</label>
 
                 <div class="controls">
                     <input type="date" ng-model="birthday" id="birthday" class="input-medium">
@@ -67,6 +67,27 @@
                     <td><input type="number" ng-model="wsScore" ng-change="wsScoreChange()" class="input-small"></td>
                     <td><input type="number" ng-model="wsNorm" disabled="true" class="input-small"></td>
                     <td><input type="number" ng-model="wsPercentiel" disabled="true" class="input-small"></td>
+                </tr>
+                <tr>
+                    <td>Zinnen herhalen (ZH)</td>
+                    <td><input type="number" ng-model="zhScore" ng-change="zhScoreChange()" class="input-small"></td>
+                    <td><input type="number" ng-model="zhNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="zhPercentiel" disabled="true" class="input-small"></td>
+                </tr>
+                <tr>
+                    <td>Zinnen formuleren (ZF)</td>
+                    <td><input type="number" ng-model="zfScore" ng-change="zfScoreChange()" class="input-small"></td>
+                    <td><input type="number" ng-model="zfNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="zfPercentiel" disabled="true" class="input-small"></td>
+                </tr>
+                <tr class="info">
+                    <td colspan="4"><b>Kernscore en indexscores<b/></td>
+                </tr>
+                <tr>
+                    <td>Totaal normscores</td>
+                    <td></td>
+                    <td><input type="number" ng-model="normTotal" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="percentielTotal" disabled="true" class="input-small"></td>
                 </tr>
                 </tbody>
             </table>
