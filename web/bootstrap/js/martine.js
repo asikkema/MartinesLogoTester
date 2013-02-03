@@ -1,5 +1,7 @@
 function MartineCtrl($scope) {
 
+    var scoreTable = [scoreTable50, scoreTable56, scoreTable60, scoreTable70];
+
     $scope.calcAge = function () {
         var today = new Date();
         var birthDate = new Date($scope.birthday);
@@ -15,7 +17,9 @@ function MartineCtrl($scope) {
             months = today.getMonth() - birthDate.getMonth();
         }
 
-        $scope.years = years;
+
+        $scope.years = parseFloat((years + '.' + months));
+        console.log('years: ' + $scope.years);
 
         $scope.ageDisplay = '' + years + ' jaar en ' + months + ' maanden.';
 
@@ -28,7 +32,6 @@ function MartineCtrl($scope) {
         $scope.bavNorm = '';
         $scope.bavPercentiel = '';
     };
-
 
     $scope.search = function(part, score) {
         function findTableByAge(age) {
@@ -84,6 +87,14 @@ function MartineCtrl($scope) {
         $scope.zfNorm = r.normScore;
         $scope.zfPercentiel = r.percentiel;
         $scope.updateTotals();
+    };
+
+    $scope.scoreChange = function(ab) {
+        var r = $scope.search(ab, $scope[ab + 'Score']);
+        if (r) {
+            $scope[ab+'Norm'] = r.normScore;
+            $scope[ab+'Percentiel'] = r.percentiel;
+        }
     };
 
     $scope.updateTotals = function() {
