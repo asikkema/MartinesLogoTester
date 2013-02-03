@@ -17,8 +17,10 @@ function MartineCtrl($scope) {
             months = today.getMonth() - birthDate.getMonth();
         }
 
+        var d = months < 10 ? '0' + months : months;
 
-        $scope.years = parseFloat((years + '.' + months));
+        $scope.years = parseFloat((years + '.' + d));
+
         console.log('years: ' + $scope.years);
 
         $scope.ageDisplay = '' + years + ' jaar en ' + months + ' maanden.';
@@ -31,15 +33,19 @@ function MartineCtrl($scope) {
         $scope.wsPercentiel = '';
         $scope.bavNorm = '';
         $scope.bavPercentiel = '';
+        $scope.wcrNorm = '';
+        $scope.zbNorm = '';
     };
 
     $scope.search = function(part, score) {
         function findTableByAge(age) {
             for (var i = 0; i <  scoreTable.length; i++) {
                 var r = scoreTable[i];
-                if (age >= r.minAge && age <= r.maxAge) return r;
+                console.log('compare: ' + age + ' to min: ' + r.minAge + ' and max: ' + r.maxAge + " is: " + (age >= r.minAge && age <= r.maxAge));
+                if (parseFloat(age) >= parseFloat(r.minAge) && parseFloat(age) <= parseFloat(r.maxAge)) return r;
             }
             alert('Geen tabel aanwezig voor leeftijd: "' + age +'".');
+            return null;
         }
 
         function findInTable(table, part, rawScore) {
@@ -56,48 +62,28 @@ function MartineCtrl($scope) {
             alert("Geen leeftijd, voer geboorte datum in.");
         } else {
             var t = findTableByAge($scope.years);
-            return findInTable(t, part, score);
+            if (t != null) {
+                console.log('Tabel: ' + t.minAge + ' - ' + t.maxAge);
+                return findInTable(t, part, score);
+            }
         }
     };
 
 
-    $scope.bavScoreChange = function () {
-        var r = $scope.search('bav', $scope.bavScore);
-        $scope.bavNorm = r.normScore;
-        $scope.bavPercentiel = r.percentiel;
-        $scope.updateTotals();
-    };
-
-    $scope.wsScoreChange = function() {
-        var r = $scope.search('ws', $scope.wsScore);
-        $scope.wsNorm = r.normScore;
-        $scope.wsPercentiel = r.percentiel;
-        $scope.updateTotals();
-    };
-
-    $scope.zhScoreChange = function() {
-        var r = $scope.search('zh', $scope.zhScore);
-        $scope.zhNorm = r.normScore;
-        $scope.zhPercentiel = r.percentiel;
-        $scope.updateTotals();
-    };
-
-    $scope.zfScoreChange = function() {
-        var r = $scope.search('zf', $scope.zfScore);
-        $scope.zfNorm = r.normScore;
-        $scope.zfPercentiel = r.percentiel;
-        $scope.updateTotals();
-    };
-
     $scope.scoreChange = function(ab) {
-        var r = $scope.search(ab, $scope[ab + 'Score']);
+        var fieldName = ab + 'Score';
+        console.log('searching FieldName: ' + fieldName);
+        var r = $scope.search(ab, $scope[fieldName]);
         if (r) {
             $scope[ab+'Norm'] = r.normScore;
             $scope[ab+'Percentiel'] = r.percentiel;
+            $scope.updateTotals();
         }
     };
 
     $scope.updateTotals = function() {
-//        $scope.normTotal = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
+        console.log('update totals');
+        $scope.totaalNorm_Kernscore = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
+        $scope.totaalNorm_Receptieve_Taal_Index = $scope.bavNorm + $scope.wcrNorm + $scope.zbNorm;
     }
 }

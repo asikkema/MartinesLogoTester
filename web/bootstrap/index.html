@@ -55,6 +55,10 @@
             </div>
         </form>
     </div>
+
+    <div class="accordion" id="accordion2">
+        <div class="accordion-group">
+
     <div class="row">
         <div class="span9">
             <table class="table table-striped">
@@ -99,21 +103,21 @@
                 <tr>
                     <td>Woordcategorie&#235;n Receptief</td>
                     <td>WC-R</td>
-                    <td><input type="number" ng-model="wrcScore" ng-change="scoreChange('wcr')" class="input-small"></td>
-                    <td><input type="number" ng-model="wrcNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="wrcPercentiel" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="wcrScore" ng-change="scoreChange('wcr')" class="input-small"></td>
+                    <td><input type="number" ng-model="wcrNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="wcrPercentiel" disabled="true" class="input-small"></td>
                 </tr>
                 <tr>
                     <td>Woordcategorie&#235;n Expressief</td>
                     <td>WC-E</td>
-                    <td><input type="number" ng-model="wreScore" ng-change="scoreChange('wce')" class="input-small"></td>
-                    <td><input type="number" ng-model="wreNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="wrePercentiel" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="wceScore" ng-change="scoreChange('wce')" class="input-small"></td>
+                    <td><input type="number" ng-model="wceNorm" disabled="true" class="input-small"></td>
+                    <td><input type="number" ng-model="wcePercentiel" disabled="true" class="input-small"></td>
                 </tr>
                 <tr>
                     <td>Zinnen Begrijpen</td>
                     <td>ZB</td>
-                    <td><input type="number" ng-model="zbScore" ng-change="scoreChange('zg')" class="input-small"></td>
+                    <td><input type="number" ng-model="zbScore" ng-change="scoreChange('zb')" class="input-small"></td>
                     <td><input type="number" ng-model="zbNorm" disabled="true" class="input-small"></td>
                     <td><input type="number" ng-model="zbPercentiel" disabled="true" class="input-small"></td>
                 </tr>
@@ -176,7 +180,52 @@
                 </tbody>
             </table>
         </div>
-
+    </div>
+    <div class="row">
+        <div class="span12">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Kernscore en Indexscores</th>
+                    <th>Kernscore</th>
+                    <th>Receptieve Taal Index</th>
+                    <th>Expressieve Taal Index</th>
+                    <th>Taalinhoud Index</th>
+                    <th>Taalvorm Index</th>
+                    <th>Werkgeheugen Index</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Totaal normscore</strong></td>
+                        <td>{{totaalNorm_Kernscore}}</td>
+                        <td>{{totaalNorm_Receptieve_Taal_Index}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr class="info">
+                        <td><strong>Normscores</strong></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Percentiel</strong></td>
+                        <td>{{percentiel_Kernscore}}</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <hr>

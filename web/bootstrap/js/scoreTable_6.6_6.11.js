@@ -1,5 +1,5 @@
 var scoreTable66 = {
-    minAge: 6.6,
+    minAge: 6.06,
     maxAge: 6.11,
     bav: [
         {

@@ -1,5 +1,5 @@
 var scoreTable70 = {
-    minAge: 7.0,
+    minAge: 7.00,
     maxAge: 7.11,
     bav: [
         {
