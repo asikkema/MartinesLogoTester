@@ -85,5 +85,9 @@ function MartineCtrl($scope) {
         console.log('update totals');
         $scope.totaalNorm_Kernscore = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
         $scope.totaalNorm_Receptieve_Taal_Index = $scope.bavNorm + $scope.wcrNorm + $scope.zbNorm;
+        $scope.totaalNorm_Expressieve_Taal_Index = $scope.wsNorm + $scope.zhNorm + $scope.zfNorm + $scope.wceNorm + $scope.awNorm;
+        $scope.totaalNorm_Taalinhoud_Index = $scope.bavNorm + ($scope.wcrNorm + $scope.wceNorm) + $scope.awNorm + $scope.tbNorm;
+        $scope.totaalNorm_Taalvorm_Index = $scope.wsNorm + $scope.zhNorm + $scope.zfNorm + $scope.zbNorm;
+        $scope.totaalNorm_Werkgeheugen_Index = ($scope.chvNorm + $scope.chaNorm) + $scope.roNorm;
     }
 }
