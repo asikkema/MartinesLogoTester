@@ -23,26 +23,15 @@
 <script src="js/scoreTable_13.0_13.11.js"></script>
 <script src="js/scoreTable_14.0_14.11.js"></script>
 <script src="js/scoreTable_15.0_15.11.js"></script>
+<script src="js/normscores_5.0_8.0.js"></script>
 <script src="js/martine.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-</head>
-
-<body>
 
 <div class="container" ng-controller="MartineCtrl">
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
         <h2>Martine's Test calculator</h2>
+
         <form class="form-horizontal" ng-submit="calcAge()">
             <div class="control-group">
                 <label class="control-label" for="birthday">Geboorte datum</label>
@@ -59,181 +48,198 @@
     <div class="accordion" id="accordion2">
         <div class="accordion-group">
 
-    <div class="row">
-        <div class="span9">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Subtesten</th>
-                    <th></th>
-                    <th>Ruwe score</th>
-                    <th>Norm score</th>
-                    <th>Percentiel</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Begrippen en Aanwijzingen Volgen</td>
-                    <td>BAV</td>
-                    <td><input type="number" ng-model="bavScore" ng-change="scoreChange('bav')" class="input-small"></td>
-                    <td><input type="number" ng-model="bavNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="bavPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Woordstructuur</td>
-                    <td>WS</td>
-                    <td><input type="number" ng-model="wsScore" ng-change="scoreChange('ws')" class="input-small"></td>
-                    <td><input type="number" ng-model="wsNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="wsPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Zinnen Herhalen</td>
-                    <td>ZH</td>
-                    <td><input type="number" ng-model="zhScore" ng-change="scoreChange('zh')" class="input-small"></td>
-                    <td><input type="number" ng-model="zhNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="zhPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Zinnen Formuleren</td>
-                    <td>ZF</td>
-                    <td><input type="number" ng-model="zfScore" ng-change="scoreChange('zf')" class="input-small"></td>
-                    <td><input type="number" ng-model="zfNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="zfPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Woordcategorie&#235;n Receptief</td>
-                    <td>WC-R</td>
-                    <td><input type="number" ng-model="wcrScore" ng-change="scoreChange('wcr')" class="input-small"></td>
-                    <td><input type="number" ng-model="wcrNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="wcrPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Woordcategorie&#235;n Expressief</td>
-                    <td>WC-E</td>
-                    <td><input type="number" ng-model="wceScore" ng-change="scoreChange('wce')" class="input-small"></td>
-                    <td><input type="number" ng-model="wceNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="wcePercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Zinnen Begrijpen</td>
-                    <td>ZB</td>
-                    <td><input type="number" ng-model="zbScore" ng-change="scoreChange('zb')" class="input-small"></td>
-                    <td><input type="number" ng-model="zbNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="zbPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Actieve Woordenschat</td>
-                    <td>AW</td>
-                    <td><input type="number" ng-model="awScore" ng-change="scoreChange('aw')" class="input-small"></td>
-                    <td><input type="number" ng-model="awNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="awPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Tekstbegrip</td>
-                    <td>TB</td>
-                    <td><input type="number" ng-model="tbScore" ng-change="scoreChange('tb')" class="input-small"></td>
-                    <td><input type="number" ng-model="tbNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="tbPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Fonologisch Bewustzijn</td>
-                    <td>FB</td>
-                    <td><input type="number" ng-model="fbScore" ng-change="scoreChange('fb')" class="input-small"></td>
-                    <td><input type="number" ng-model="fbNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="fbPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Cijfers Herhalen Voorwaarts</td>
-                    <td>CH-V</td>
-                    <td><input type="number" ng-model="chvScore" ng-change="scoreChange('chv')" class="input-small"></td>
-                    <td><input type="number" ng-model="chvNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="chvPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Cijfers Herhalen Achterwaarts</td>
-                    <td>CH-A</td>
-                    <td><input type="number" ng-model="chaScore" ng-change="scoreChange('cha')" class="input-small"></td>
-                    <td><input type="number" ng-model="chaNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="chaPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Reeksen Opsommen</td>
-                    <td>RO</td>
-                    <td><input type="number" ng-model="roScore" ng-change="scoreChange('ro')" class="input-small"></td>
-                    <td><input type="number" ng-model="roNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="roPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Woordassociaties</td>
-                    <td>WA</td>
-                    <td><input type="number" ng-model="waScore" ng-change="scoreChange('wa')" class="input-small"></td>
-                    <td><input type="number" ng-model="waNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="waPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                <tr>
-                    <td>Snel Benoemen tijd</td>
-                    <td>SBt</td>
-                    <td><input type="number" ng-model="sbtScore" ng-change="scoreChange('sbt')" class="input-small"></td>
-                    <td><input type="number" ng-model="sbtNorm" disabled="true" class="input-small"></td>
-                    <td><input type="number" ng-model="sbtPercentiel" disabled="true" class="input-small"></td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="span9">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Subtesten</th>
+                            <th></th>
+                            <th>Ruwe score</th>
+                            <th>Norm score</th>
+                            <th>Percentiel</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Begrippen en Aanwijzingen Volgen</td>
+                            <td>BAV</td>
+                            <td><input type="number" ng-model="bavScore" ng-change="scoreChange('bav')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="bavNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="bavPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Woordstructuur</td>
+                            <td>WS</td>
+                            <td><input type="number" ng-model="wsScore" ng-change="scoreChange('ws')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="wsNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="wsPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Zinnen Herhalen</td>
+                            <td>ZH</td>
+                            <td><input type="number" ng-model="zhScore" ng-change="scoreChange('zh')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="zhNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="zhPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Zinnen Formuleren</td>
+                            <td>ZF</td>
+                            <td><input type="number" ng-model="zfScore" ng-change="scoreChange('zf')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="zfNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="zfPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Woordcategorie&#235;n Receptief</td>
+                            <td>WC-R</td>
+                            <td><input type="number" ng-model="wcrScore" ng-change="scoreChange('wcr')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="wcrNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="wcrPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Woordcategorie&#235;n Expressief</td>
+                            <td>WC-E</td>
+                            <td><input type="number" ng-model="wceScore" ng-change="scoreChange('wce')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="wceNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="wcePercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Zinnen Begrijpen</td>
+                            <td>ZB</td>
+                            <td><input type="number" ng-model="zbScore" ng-change="scoreChange('zb')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="zbNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="zbPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Actieve Woordenschat</td>
+                            <td>AW</td>
+                            <td><input type="number" ng-model="awScore" ng-change="scoreChange('aw')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="awNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="awPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Tekstbegrip</td>
+                            <td>TB</td>
+                            <td><input type="number" ng-model="tbScore" ng-change="scoreChange('tb')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="tbNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="tbPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Fonologisch Bewustzijn</td>
+                            <td>FB</td>
+                            <td><input type="number" ng-model="fbScore" ng-change="scoreChange('fb')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="fbNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="fbPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Cijfers Herhalen Voorwaarts</td>
+                            <td>CH-V</td>
+                            <td><input type="number" ng-model="chvScore" ng-change="scoreChange('chv')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="chvNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="chvPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Cijfers Herhalen Achterwaarts</td>
+                            <td>CH-A</td>
+                            <td><input type="number" ng-model="chaScore" ng-change="scoreChange('cha')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="chaNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="chaPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Reeksen Opsommen</td>
+                            <td>RO</td>
+                            <td><input type="number" ng-model="roScore" ng-change="scoreChange('ro')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="roNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="roPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Woordassociaties</td>
+                            <td>WA</td>
+                            <td><input type="number" ng-model="waScore" ng-change="scoreChange('wa')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="waNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="waPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        <tr>
+                            <td>Snel Benoemen tijd</td>
+                            <td>SBt</td>
+                            <td><input type="number" ng-model="sbtScore" ng-change="scoreChange('sbt')"
+                                       class="input-small"></td>
+                            <td><input type="number" ng-model="sbtNorm" disabled="true" class="input-small"></td>
+                            <td><input type="number" ng-model="sbtPercentiel" disabled="true" class="input-small"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Kernscore en Indexscores</th>
+                            <th>Kernscore</th>
+                            <th>Receptieve Taal Index</th>
+                            <th>Expressieve Taal Index</th>
+                            <th>Taalinhoud Index</th>
+                            <th>Taalvorm Index</th>
+                            <th>Werkgeheugen Index</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>Totaal normscore</strong></td>
+                            <td>{{totaalNorm_Kernscore}}</td>
+                            <td>{{totaalNorm_Receptieve_Taal_Index}}</td>
+                            <td>{{totaalNorm_Expressieve_Taal_Index}}</td>
+                            <td>{{totaalNorm_Taalinhoud_Index}}</td>
+                            <td>{{totaalNorm_Taalvorm_Index}}</td>
+                            <td>{{totaalNorm_Werkgeheugen_Index}}</td>
+                        </tr>
+                        <tr class="info">
+                            <td><strong>Normscores</strong></td>
+                            <td>{{norm_Kernscore}}</td>
+                            <td>{{norm_Receptieve_Taal_Index}}</td>
+                            <td>{{norm_Expressieve_Taal_Index}}</td>
+                            <td>{{norm_Taalinhoud_Index}}</td>
+                            <td>{{norm_Taalvorm_Index}}</td>
+                            <td>{{norm_Werkgeheugen_Index}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Percentiel</strong></td>
+                            <td>{{percentiel_Kernscore}}</td>
+                            <td>{{percentiel_Receptieve_Taal_Index}}</td>
+                            <td>{{percentiel_Expressieve_Taal_Index}}</td>
+                            <td>{{percentiel_Taalinhoud_Index}}</td>
+                            <td>{{percentiel_Taalvorm_Index}}</td>
+                            <td>{{percentiel_Werkgeheugen_Index}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Martine 2013</p>
+            </footer>
+
         </div>
     </div>
-    <div class="row">
-        <div class="span12">
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>Kernscore en Indexscores</th>
-                    <th>Kernscore</th>
-                    <th>Receptieve Taal Index</th>
-                    <th>Expressieve Taal Index</th>
-                    <th>Taalinhoud Index</th>
-                    <th>Taalvorm Index</th>
-                    <th>Werkgeheugen Index</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Totaal normscore</strong></td>
-                        <td>{{totaalNorm_Kernscore}}</td>
-                        <td>{{totaalNorm_Receptieve_Taal_Index}}</td>
-                        <td>{{totaalNorm_Expressieve_Taal_Index}}</td>
-                        <td>{{totaalNorm_Taalinhoud_Index}}</td>
-                        <td>{{totaalNorm_Taalvorm_Index}}</td>
-                        <td>{{totaalNorm_Werkgeheugen_Index}}</td>
-                    </tr>
-                    <tr class="info">
-                        <td><strong>Normscores</strong></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Percentiel</strong></td>
-                        <td>{{percentiel_Kernscore}}</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <hr>
-
-    <footer>
-        <p>&copy; Martine 2013</p>
-    </footer>
-
 </div>
 </body>
 </html>
