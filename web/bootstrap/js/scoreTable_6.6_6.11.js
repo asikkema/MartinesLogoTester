@@ -500,7 +500,6 @@ var scoreTable66 = {
             to: 19,
             normScore: 16,
             percentiel: 98
-        },
         }
     ],
     zb: [
@@ -811,7 +810,7 @@ var scoreTable66 = {
             percentiel: 95
         },
         {   from: 44,
-            to: 44
+            to: 44,
             normScore: 16,
             percentiel: 98
         },
@@ -1098,7 +1097,7 @@ var scoreTable66 = {
             normScore: 15,
             percentiel: 95
         },
-        {   from: 241
+        {   from: 241,
             to: 43,
             normScore: 16,
             percentiel: 98

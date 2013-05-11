@@ -37,15 +37,20 @@ function MartineCtrl($scope) {
         $scope.zbNorm = '';
     };
 
+    $scope.findTableBasedOnAge = function(age) {
+        for (var i = 0; i <  scoreTable.length; i++) {
+            var r = scoreTable[i];
+            console.log('compare: ' + age + ' to min: ' + r.minAge + ' and max: ' + r.maxAge + " is: " + (age >= r.minAge && age <= r.maxAge));
+            if (parseFloat(age) >= parseFloat(r.minAge) && parseFloat(age) <= parseFloat(r.maxAge)) return r;
+        }
+        return null;
+    };
+
     $scope.search = function(part, score) {
         function findTableByAge(age) {
-            for (var i = 0; i <  scoreTable.length; i++) {
-                var r = scoreTable[i];
-                console.log('compare: ' + age + ' to min: ' + r.minAge + ' and max: ' + r.maxAge + " is: " + (age >= r.minAge && age <= r.maxAge));
-                if (parseFloat(age) >= parseFloat(r.minAge) && parseFloat(age) <= parseFloat(r.maxAge)) return r;
-            }
-            alert('Geen tabel aanwezig voor leeftijd: "' + age +'".');
-            return null;
+            var table = $scope.findTableBasedOnAge(age);
+            if (table == null) alert('Geen tabel aanwezig voor leeftijd: "' + age +'".');
+            return age;
         }
 
         function findInTable(table, part, rawScore) {
@@ -83,11 +88,11 @@ function MartineCtrl($scope) {
 
     $scope.updateTotals = function() {
         console.log('update totals');
-        $scope.totaalNorm_Kernscore = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
-        $scope.totaalNorm_Receptieve_Taal_Index = $scope.bavNorm + $scope.wcrNorm + $scope.zbNorm;
+        $scope.totaalNorm_Kernscore              = $scope.bavNorm + $scope.wsNorm + $scope.zhNorm + $scope.zfNorm;
+        $scope.totaalNorm_Receptieve_Taal_Index  = $scope.bavNorm + $scope.wcrNorm + $scope.zbNorm;
         $scope.totaalNorm_Expressieve_Taal_Index = $scope.wsNorm + $scope.zhNorm + $scope.zfNorm + $scope.wceNorm + $scope.awNorm;
-        $scope.totaalNorm_Taalinhoud_Index = $scope.bavNorm + ($scope.wcrNorm + $scope.wceNorm) + $scope.awNorm + $scope.tbNorm;
-        $scope.totaalNorm_Taalvorm_Index = $scope.wsNorm + $scope.zhNorm + $scope.zfNorm + $scope.zbNorm;
-        $scope.totaalNorm_Werkgeheugen_Index = ($scope.chvNorm + $scope.chaNorm) + $scope.roNorm;
+        $scope.totaalNorm_Taalinhoud_Index       = $scope.bavNorm + ($scope.wcrNorm + $scope.wceNorm) + $scope.awNorm + $scope.tbNorm;
+        $scope.totaalNorm_Taalvorm_Index         = $scope.wsNorm + $scope.zhNorm + $scope.zfNorm + $scope.zbNorm;
+        $scope.totaalNorm_Werkgeheugen_Index     = ($scope.chvNorm + $scope.chaNorm) + $scope.roNorm;
     }
 }
