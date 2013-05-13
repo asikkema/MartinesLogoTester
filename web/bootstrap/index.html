@@ -30,19 +30,25 @@
 
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="hero-unit">
-        <h2>Martine's Test calculator</h2>
+        <div style="float: left">
+            <img src="img/logo.jpg" alt="Logo" width="150" height="150"/>
+        </div>
+        <div style="float: left">
+            <h2>&nbsp;Martine's CELF Test calculator</h2>
+        </div>
+        <div style="clear: both;">
+            <form class="form-horizontal" ng-submit="calcAge()">
+                <div class="control-group">
+                    <label class="control-label" for="birthday">Geboortedatum</label>
 
-        <form class="form-horizontal" ng-submit="calcAge()">
-            <div class="control-group">
-                <label class="control-label" for="birthday">Geboorte datum</label>
-
-                <div class="controls">
-                    <input type="date" ng-model="birthday" id="birthday" class="input-medium">
-                    <input class="btn-primary" type="submit" value="Bereken leeftijd">
-                    <input type="text" disabled="true" ng-model="ageDisplay" id="age"><br/>
+                    <div class="controls">
+                        <input type="date" ng-model="birthday" id="birthday" class="input-medium">
+                        <input class="btn-primary" type="submit" value="Bereken leeftijd">
+                        <input type="text" disabled="true" ng-model="ageDisplay" id="age"><br/>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <div class="accordion" id="accordion2">
