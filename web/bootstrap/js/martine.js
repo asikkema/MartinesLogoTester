@@ -1,6 +1,6 @@
 function MartineCtrl($scope) {
 
-    var scoreTable = [scoreTable50, scoreTable56, scoreTable60, scoreTable70];
+    var scoreTable = [scoreTable50, scoreTable56, scoreTable60, scoreTable66, scoreTable70, scoreTable80];
     var normTable  = [normScores50];
 
     $scope.calcAge = function () {
