@@ -1,0 +1,4 @@
+input[disabled] {
+    color: black !important;
+    background-color: #f5f5f5 !important;
+}
